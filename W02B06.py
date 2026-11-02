@@ -4,15 +4,15 @@ import itertools
 # Bài A19:
 m = 4
 n = 6
-allMaps19 = list(itertools.product(range(n), repeat = m))
-donAnh = [f for f in allMaps19 if len(set(f)) == m]
+allMaps19 = list(itertools.product(range(n), repeat = m)) # chú ý cách khởi tạo ánh xạ bất kì.
+donAnh = [f for f in allMaps19 if len(set(f)) == m] # chú ý điều kiện đơn ánh.
 print("[A19a]: Số ánh xạ: Vét cạn:", len(allMaps19), "| Công thức:", n**m)
 print("[A19b]: Số đơn ánh: Vét cạn:", len(donAnh), "| Công thức:", math.perm(n, m))
 
 # Bài A20:
 n = 6
 allMaps20 = list(itertools.product(range(n), repeat = n))
-songAnh = list(itertools.permutations(range(n)))
+songAnh = list(itertools.permutations(range(n))) # chú ý cách khởi tạo song ánh
 
 # (a): f(i) != i với mọi i (hoán vị vô trật tự - Dearrangement)
 aMaps = [f for f in allMaps20 if all(f[i] != i for i in range(n))]
